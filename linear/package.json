@@ -1,0 +1,29 @@
+{
+  "name": "linear-mcp-server",
+  "version": "0.1.0",
+  "description": "A Model Context Protocol server for the Linear API.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "linear-mcp-server": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@linear/sdk": "^33.0.0",
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "dotenv": "^16.4.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+}
